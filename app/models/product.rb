@@ -7,7 +7,7 @@ class Product < ApplicationRecord
     #validates :nombre, presence: true
     validates :nombre, presence: {message: 'el nombre del prodycto es  obligatorio'}
     validates :codigo, uniqueness: {message: "el codigo %{value} ya se encuentra asignado a toro producto"}
-    validates :nombre, length:{in: 5..20, message "el nombre debe tener entre 5 y 20 caracteres"}
+    #validates :nombre, length: {in: 5..20, message "el nombre debe tener entre 5 y 20 caracteres"}
 
     validate :codigo_validate
     #para generar validaciones no prestablecidas en rails
