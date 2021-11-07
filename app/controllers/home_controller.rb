@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @productos = Product.all
+    @productos = Product.disponible.orden_codigo
   end
 end

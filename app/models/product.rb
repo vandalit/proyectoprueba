@@ -9,6 +9,10 @@ class Product < ApplicationRecord
     validates :codigo, uniqueness: {message: "el codigo %{value} ya se encuentra asignado a toro producto"}
     #validates :nombre, length: {in: 5..20, message "el nombre debe tener entre 5 y 20 caracteres"}
 
+    scope :disponible, -> { where('stock >= ?', 1)}
+    scope :orden_codigo, -> { order('codigo')}
+    #al arecer todos los filtros or orden o tag son scoes
+
     validate :codigo_validate
     #para generar validaciones no prestablecidas en rails
     #en este ejemplo tenemos presence, uniqueness, length, 
